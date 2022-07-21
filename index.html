@@ -1,0 +1,616 @@
+<!doctype html>
+<!--
+    本站放弃版权，但不放弃对“使用本站代码及资源而不标明出处者”墙裂谴责的权利！
+    By: nook.ltd
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1122,user-scalable=0">
+    <meta name="referrer" content="never">
+    <title>NO FREELOADING!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        body {
+            background-color: gray;
+        }
+        .paper {
+            width: 1005px;
+            margin: 0 auto;
+            background-color: ghostwhite;
+            background-image: url(./images/paper.jpg);
+            background-position: center;
+            padding: 50px;
+        }
+        .box {
+            width: 1000px;
+            height: 1475px;
+            border: 2.5px solid black;
+        }
+        /* 头部 */
+        .header {
+            position: relative;
+        }
+        /* 头部 左侧 */
+        .header .left {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .header .left h1 {
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 500px;
+            font-family: sans-serif;
+            font-size: 90px;
+            font-style: italic;
+            color: navy;
+            text-align: center;
+        }
+        .header .left h2 {
+            display: block;
+            position: absolute;
+            top: 140px;
+            left: 0;
+            width: 500px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 22px;
+            color: navy;
+            text-align: center;
+        }
+        .header .left span {
+            display: block;
+            position: absolute;
+            top: 180px;
+            left: 0;
+            width: 500px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+        /* 头部 左侧 信息框 */
+        .header .left .meta {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 510px;
+            width: 130px;
+            height: 200px;
+            border: 2.5px solid gray;
+        }
+        .header .left .meta p {
+            display: block;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+            padding: 4px;
+        }
+        .header .left .meta p.nian {
+            font-size: 26px;
+        }
+        .header .left .meta p.nong {
+            font-family: '宋体';
+        }
+        .header .left .meta p.she {
+            font-family: '楷体';
+        }
+        .header .left .meta p.ban {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        .header .left .meta p.hao {
+            font-family: '宋体';
+        }
+        .header .left .hr {
+            display: block;
+            position: absolute;
+            top: 225px;
+            left: 10px;
+            width: 635px;
+            height: 2.5px;
+            background-color: black;
+        }
+        /* 头部 右侧 */
+        .header .right {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 655px;
+            width: 330px;
+            height: 212.25px;
+            border: 2.5px solid navy;
+        }
+        .header .right p {
+            display: block;
+            padding: 20px;
+            color: navy;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 23px;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: distribute-all-lines;
+            text-indent: 46px;
+        }
+        /* 内容 */
+        .content {
+            position: relative;
+            top: 230px;
+        }
+        /* 内容 头条 */
+        .content h1 {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1000px;
+            font-family: sans-serif;
+            font-size: 67px;
+            text-align: center;
+        }
+        .content .subtitle {
+            display: block;
+            position: absolute;
+            top: 90px;
+            left: 0;
+            width: 1000px;
+            font-family: sans-serif;
+            font-size: 30px;
+            text-align: center;
+            letter-spacing: 30px;
+            text-indent: 30px;
+        }
+        /* 内容 信息0 */
+        .message0 {
+            position: absolute;
+            top: 145px;
+        }
+        /* 内容 信息0 成员1-4 */
+        .content .mbox {
+            display: block;
+            position: absolute;
+            top: 0;
+        }
+        .content .mbox.b1 {
+            left: 10px;
+        }
+        .content .mbox.b2 {
+            left: 257.5px;
+        }
+        .content .mbox.b3 {
+            left: 505px;
+        }
+        .content .mbox.b4 {
+            left: 752.5px;
+        }
+        .content .member {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 232.5px;
+            height: 232.5px;
+            background-color: whitesmoke;
+            background-size: cover;
+            background-position: center;
+            border: 2.5px solid black;
+            border-radius: 3px;
+            cursor: pointer;
+            opacity: .8;
+        }
+        .content .member.m1 {
+            background-image: url(./images/xianggu_256_2.jpg);
+        }
+        .content .member.m2 {
+            background-image: url(./images/36_256.jpg);
+        }
+        .content .member.m3 {
+            background-image: url(./images/zeze_256.jpg);
+        }
+        .content .member.m4 {
+            background-image: url(./images/alex_256.jpg);
+        }
+        .content .desc {
+            display: block;
+            position: absolute;
+            top: 245px;
+            left: 0;
+            width: 237.5px;
+            height: 80px;
+        }
+        .content .desc h3 {
+            font-size: 25px;
+            text-align: center;
+        }
+        .content .desc span {
+            display: block;
+            font-family: '宋体';
+            font-size: 16px;
+            text-align: center;
+        }
+        /* 内容 信息1 */
+        .content .hr {
+            position: absolute;
+            left: 10px;
+            width: 980px;
+            height: 2.5px;
+            background-color: black;
+        }
+        .content .vr {
+            position: absolute;
+            width: 2.5px;
+            background-color: black;
+        }
+        .content .message1 {
+            position: absolute;
+            top: 480px;
+        }
+        .content .hr.h1 {
+            top: 0;
+        }
+        .content .vr.v1 {
+            left: calc(500px - 1.25px);
+            top: 10px;
+            height: 80px;
+        }
+        .content .message {
+            position: absolute;
+        }
+        .content .message p {
+            font-family: '宋体';
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: distribute-all-lines;
+        }
+        .content .message p span.title {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            margin: 0 10px 0 36px;
+        }
+        .content .message.m1 {
+            width: 480px;
+            top: 10px;
+            left: 10px;
+        }
+        .content .message.m2 {
+            width: 480px;
+            top: 10px;
+            left: 510px;
+        }
+        /* 内容 信息2 成员5-8 */
+        .content .hr.h2 {
+            top: 580px;
+        }
+        .content .message2 {
+            position: absolute;
+            top: 595px;
+        }
+        .content .member.m5 {
+            background-image: url(./images/jkrs_256.jpg);
+        }
+        .content .member.m6 {
+            background-image: url(./images/lsp_256.jpg);
+        }
+        .content .member.m7 {
+            background-image: url(./images/xwz_256.jpg);
+        }
+        .content .member.m8 {
+            background-image: url(./images/azu_256.jpg);
+        }
+        /* 内容 信息3 */
+        .content .message3 {
+            position: absolute;
+            top: 925px;
+        }
+        .content .message.m3 {
+            width: 555px;
+            top: 10px;
+            left: 10px;
+        }
+        .content .vr.v2 {
+            left: calc(575px - 1.25px);
+            top: 10px;
+            height: 135px;
+        }
+        .content .message.m4 {
+            width: 405px;
+            top: 10px;
+            left: 585px;
+        }
+        /* 内容 信息4 成员9+ */
+        .content .hr.h3 {
+            top: 1080px;
+        }
+        .content .message4 {
+            position: absolute;
+            top: 1090px;
+        }
+        .content .mbox-s {
+            display: block;
+            position: absolute;
+            top: 0;
+        }
+        .content .mbox-s.b-s1 {
+            left: 10px;
+        }
+        .content .mbox-s.b-s2 {
+            left: 120px;
+        }
+        .content .mbox-s.b-s3 {
+            left: 230px;
+        }
+        .content .mbox-s.b-s4 {
+            left: 340px;
+        }
+        .content .mbox-s.b-s5 {
+            left: 450px;
+        }
+        .content .mbox-s.b-s6 {
+            left: 560px;
+        }
+        .content .mbox-s.b-s7 {
+            left: 670px;
+        }
+        .content .mbox-s.b-s8 {
+            left: 780px;
+        }
+        .content .mbox-s.b-s9 {
+            left: 890px;
+        }
+        .content .member-s {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 95px;
+            height: 95px;
+            background-color: whitesmoke;
+            background-size: cover;
+            background-position: center;
+            border: 2.5px solid black;
+            border-radius: 95px;
+            cursor: pointer;
+            opacity: .8;
+        }
+        .content .member-s {
+            background-image: url(./images/x_256.jpg);
+        }
+        .content .member-s.m-s1 {
+            background-image: url(./images/wngame_128.jpg);
+        }
+        .content .desc-s {
+            display: block;
+            position: absolute;
+            top: 105px;
+            left: 0;
+            width: 100px;
+            height: 30px;
+        }
+        .content .desc-s h3 {
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .content .desc-s span {
+            display: block;
+            font-size: 14px;
+            text-align: center;
+        }
+        /* 内容 AD */
+        .content .ad1 {
+            position: absolute;
+            top: 1095px;
+            left: 10px;
+            width: 970px;
+            height: 130px;
+            font-size: 80px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 50px;
+            text-indent: 50px;
+            line-height: 120px;
+            color: gray;
+            border: 5px dotted gray;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="paper">
+        <div class="box">
+            <div class="header">
+                <div class="left">
+                    <h1>防白嫖年刊</h1>
+                    <h2>FANGBAIPIAO NIANKAN</h2>
+                    <span>我们的网站：HTTPS://WWW.XXXX.COM/</span>
+                    <div class="meta">
+                        <p class="nian">2022年</p>
+                        <p class="nong">壬寅虎年</p>
+                        <p class="she">香菇虚拟出版社</p>
+                        <p class="ban">不统一也不一定连续非出版物号</p>
+                        <p class="hao">GU 2022-0701</p>
+                    </div>
+                    <div class="hr"></div>
+                </div>
+                <div class="right">
+                    <p>声明：本刊所述“白嫖”均指代狭义的合法互联网环境下“不付报酬而索取劳动成果的意图或行为”，请勿作其他解读。</p>
+                </div>
+            </div>
+            <div class="content">
+                <h1>菇联网防“白嫖”工作室成立啦!</h1>
+                <h2 class="subtitle">首批合伙人情报披露</h2>
+                <div class="message0">
+                    <div class="mbox b1">
+                        <div class="member m1" onclick="window.open('https://siitake.cn/')"></div>
+                        <div class="desc">
+                            <h3>普通的香菇</h3>
+                            <span>[siitake.cn]</span>
+                            <span>我们的目标是没有蛀牙!</span>
+                        </div>
+                    </div>
+                    <div class="mbox b2">
+                        <div class="member m2" onclick="window.open('https://blog.sanshiliu.cn/')"></div>
+                        <div class="desc">
+                            <h3>三十六</h3>
+                            <span>[sanshiliu.cn]</span>
+                            <span>我该说点什么呢?</span>
+                        </div>
+                    </div>
+                    <div class="mbox b3">
+                        <div class="member m3" onclick="window.open('https://zezeshe.com/')"></div>
+                        <div class="desc">
+                            <h3>泽泽社长</h3>
+                            <span>[zezeshe.com]</span>
+                            <span>我又该说点什么呢?</span>
+                        </div>
+                    </div>
+                    <div class="mbox b4">
+                        <div class="member m4" onclick="window.open('http://alexice.cn/')"></div>
+                        <div class="desc">
+                            <h3>狸花猫哥哥</h3>
+                            <span>[alexice.cn]</span>
+                            <span>贪财好色,一身正气!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="message1">
+                    <div class="hr h1"></div>
+                    <div class="message m1">
+                        <p><span class="title">本刊香菇社5月13日电</span>香菇在防“白嫖”工作室成立之际表示：并不想被“白嫖”，因此工作室首版官网都是用默认 index.html 改的，有空再添砖加瓦吧（摆烂24小时）。</p>
+                    </div>
+                    <div class="vr v1"></div>
+                    <div class="message m2">
+                        <p><span class="title">本刊香菇社5月13日电</span>记者根据三十六在会议讨论中发表的观点发回报道：虽然不想被“白嫖”，但还是提供了主机，因为那个口口声声坚决反对“白嫖”的菇提供了域名。</p>
+                    </div>
+                </div>
+                <div class="hr h2"></div>
+                <div class="message2">
+                    <div class="mbox b1">
+                        <div class="member m5" onclick="window.open('https://jk.rs/')"></div>
+                        <div class="desc">
+                            <h3>紫琳秋</h3>
+                            <span>[jk.rs]</span>
+                            <span>静思敬事警世,休道修到修道.</span>
+                        </div>
+                    </div>
+                    <div class="mbox b2">
+                        <div class="member m6" onclick="window.open('http://lsp.ink/')"></div>
+                        <div class="desc">
+                            <h3>幼稚园杀手</h3>
+                            <span>[lsp.ink]</span>
+                            <span>白嫖的最高境界就是花钱</span>
+                        </div>
+                    </div>
+                    <div class="mbox b3">
+                        <div class="member m7" onclick="window.open('http://woxihuanni.org/')"></div>
+                        <div class="desc">
+                            <h3>小王子殿下</h3>
+                            <span>[woxihuanni.org]</span>
+                            <span>我只喜欢菲公主</span>
+                        </div>
+                    </div>
+                    <div class="mbox b4">
+                        <script>
+                            var qun = function() {
+                                var r = alert("该群为 Photograph Theme for Typecho 用户群，信息更新中！");
+                            }
+                        </script>
+                        <div class="member m8" onclick="window.open('http://azu.cool/')"></div>
+                        <div class="desc">
+                            <h3>阿祖博客</h3>
+                            <span>[azu.cool]</span>
+                            <span>默默无闻小站长</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="message3">
+                    <div class="hr h1"></div>
+                    <div class="message m3">
+                        <p><span class="title">本刊香菇社5月14日电</span>摄影师狸花猫哥哥（Alex）高调宣布加入工作室，紫琳秋随后加入并表示将积极推动《防“白嫖”宣言》起草工作。三十六强调，这也许是第一份成文的《防“白嫖”宣言》，应高度重视，力求尽善尽美、做大做强。随后香菇提出扩充合伙人队伍的建议，全体合伙人均表示赞同。</p>
+                    </div>
+                    <div class="vr v2"></div>
+                    <div class="message m4">
+                        <p><span class="title">【成员招募】</span>如果您热衷创作却因“白嫖”退烧，如果您乐于分享却不堪“伸手党”骚扰……加入我们，让我们一同拒绝“白嫖”！</p>
+                        <p><span class="title">【加入途径】</span>联系香菇或工作室其他合伙人并提供必要信息，若审核通过将在本站刊登！</p>
+                    </div>
+                </div>
+                <div class="hr h3"></div>
+                <div class="message4">
+                    <div class="mbox-s b-s1">
+                        <div class="member-s m-s1" onclick="window.open('https://wngamebox.cn/')"></div>
+                        <div class="desc-s">
+                            <h3>爱玩网络</h3>
+                            <span>[wngamebox.cn]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s2">
+                        <div class="member-s m-s2" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s3">
+                        <div class="member-s m-s3" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s4">
+                        <div class="member-s m-s4" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s5">
+                        <div class="member-s m-s5" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s6">
+                        <div class="member-s m-s6" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s7">
+                        <div class="member-s m-s7" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s8">
+                        <div class="member-s m-s8" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                    <div class="mbox-s b-s9">
+                        <div class="member-s m-s9" onclick="window.open('https://nook.ltd/')"></div>
+                        <div class="desc-s">
+                            <h3>虚位以待</h3>
+                            <span>[example.com]</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="ad1">头版广告位招租</div> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
